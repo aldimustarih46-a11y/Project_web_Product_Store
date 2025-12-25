@@ -1,0 +1,27 @@
+.detail-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+}
+
+.detail-container img {
+  width: 350px;
+  border-radius: 12px;
+}
+
+.detail-info {
+  max-width: 500px;
+}
+
+.detail-info h2 {
+  font-size: 28px;
+}
+
+.detail-info button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: orange;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

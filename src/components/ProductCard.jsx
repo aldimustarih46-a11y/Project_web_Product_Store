@@ -1,14 +1,20 @@
-function ProductCard({ product, onAdd }) {
+import "./ProductCard.css";
+
+function ProductCard({ product, onAddToCart, onSelectProduct }) {
+
   return (
-    <div style={{
-      border: "1px solid #ccc",
-      padding: "16px",
-      width: "200px"
-    }}>
-      <h3>{product.name}</h3>
-      <p>Harga: Rp {product.price}</p>
-      <button onClick={() => onAdd(product.name)}>
-        Add to Cart
+    <div className="product-card">
+      <img
+        src={product.image}
+        alt={product.name}
+        onClick={() => onSelectProduct(product)}
+      />
+
+      <h4>{product.name}</h4>
+      <p>Rp {product.price.toLocaleString("id-ID")}</p>
+
+      <button onClick={() => onAddToCart(product)}>
+        Tambah ke Keranjang
       </button>
     </div>
   );

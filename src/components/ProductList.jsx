@@ -1,13 +1,15 @@
 import ProductCard from "./ProductCard";
+import "./ProductList.css";
 
-function ProductList({ products, onAdd }) {
+function ProductList({ products, onAddToCart, onSelectProduct }) {
   return (
-    <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
-      {products.map((item) => (
+    <div className="product-list">
+      {products.map((product) => (
         <ProductCard
-          key={item.id}
-          product={item}
-          onAdd={onAdd}
+          key={product.id}
+          product={product}
+          onAddToCart={onAddToCart}
+          onSelectProduct={onSelectProduct}
         />
       ))}
     </div>
@@ -15,4 +17,3 @@ function ProductList({ products, onAdd }) {
 }
 
 export default ProductList;
-		
