@@ -1,6 +1,8 @@
 import { FaShoppingCart, FaBell, FaQuestionCircle } from "react-icons/fa";
 import { getAuthUser, logout } from "../../hooks/useAuth";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { Button } from "@/components/ui/button";
+import { Users } from "lucide-react";
 
 function Header() {
   const user = getAuthUser();
@@ -13,13 +15,31 @@ function Header() {
 
       {/* RIGHT MENU */}
       <div className="flex items-center gap-5">
+        {/* Admin */}
+        {user?.role === "admin" && (
+          <Link to="/admin">
+            <Button variant="outline" className="flex items-center gap-2">
+              <Users className="text-black" />
+            </Button>
+          </Link>
+        )}
 
         {/* LOGIN */}
         {user && (
-          <button onClick={() => logout(navigate)} className="rounded-md bg-white px-4 py-1 font-bold text-blue-600 hover:bg-gray-200">Logout</button>
+          <button
+            onClick={() => logout(navigate)}
+            className="rounded-md bg-white px-4 py-1 font-bold text-blue-600 hover:bg-gray-200"
+          >
+            Logout
+          </button>
         )}
         {!user && (
-          <a href="/login" className="rounded-md bg-white px-4 py-1 font-bold text-blue-600 hover:bg-gray-200">Login</a>
+          <a
+            href="/login"
+            className="rounded-md bg-white px-4 py-1 font-bold text-blue-600 hover:bg-gray-200"
+          >
+            Login
+          </a>
         )}
       </div>
     </header>

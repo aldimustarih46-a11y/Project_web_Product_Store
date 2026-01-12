@@ -39,7 +39,7 @@ export default async function LoginControler(
 		sessionStorage.setItem("token", token);
 		sessionStorage.setItem("user", JSON.stringify(user));
 
-		if (user.email === "aldimustarih@gmail.com") {
+		if (user.role === "admin") {
 			navigate("/admin");
 		}
 		else {
