@@ -3,6 +3,7 @@ import { getAuthUser, logout } from "../../hooks/useAuth";
 import { Link, useNavigate } from "react-router";
 import { Button } from "@/components/ui/button";
 import { Users } from "lucide-react";
+import { Bell } from 'lucide-react';
 
 function Header() {
   const user = getAuthUser();
@@ -15,6 +16,12 @@ function Header() {
 
       {/* RIGHT MENU */}
       <div className="flex items-center gap-5">
+        <Link to="/about">
+          <Button variant="outline" className="flex text-black items-center gap-2">
+            About <Bell />
+          </Button>
+        </Link>
+
         {/* Admin */}
         {user?.role === "admin" && (
           <Link to="/admin">
@@ -23,6 +30,8 @@ function Header() {
             </Button>
           </Link>
         )}
+
+
 
         {/* LOGIN */}
         {user && (
