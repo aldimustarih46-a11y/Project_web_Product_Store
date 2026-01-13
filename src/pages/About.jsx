@@ -6,11 +6,9 @@ export default function About() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-slate-900 to-slate-700 text-white py-20 px-6">
-			<button 
-  				onClick={() => window.location.href = '/'}
-  				className="absolute top-6 left-6 flex items-center gap-2 rounded-md px-3 py-1 text-white transition-all duration-200 hover:bg-white/10 active:scale-95">
-  				<span>← Kembali</span>
-			</button>
+        <button>
+          <link rel="stylesheet" href="" />
+        </button>
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-bold mb-6">Tentang Kami</h1>
           <p className="text-xl text-gray-200 max-w-3xl">
