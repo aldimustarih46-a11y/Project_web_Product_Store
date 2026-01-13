@@ -9,24 +9,18 @@ Harga: ${product.price}`;
     window.open(waUrl, "_blank");
   };
   return (
-    <div className="bg-white rounded-xl p-4 shadow-md flex flex-col h-[360px]">
+    <div className="bg-white rounded-xl p-4 shadow-md flex flex-col h-">
       
       <img
         src={product.image}
         alt={product.title}
-        onClick={() => onSelectProduct(product)}
         className="h-[160px] object-contain cursor-pointer mb-3"
       />
 
-      <h4 className="text-sm font-semibold mb-1">{product.title}</h4>
+      <h4 className="text-sm font-semibold mb-1 self-start">{product.title}</h4>
 
-      <p className="text-green-500 font-bold mb-3">
-        Rp {product.price.toLocaleString("id-ID")}
-      </p>
-      <p>
-        {product.detail.length > 100
-                  ? product.detail.slice(0, 50) + "..."
-                  : product.detail}
+      <p className="text-green-500 font-bold self-start">
+        {product.price.toLocaleString("id-ID")}
       </p>
 
       <button
