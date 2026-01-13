@@ -50,6 +50,7 @@ export default async function LoginControler(
 		throw error;
 	}
 }
+
 export const getAuthUser = () => {
 	const token = sessionStorage.getItem("token");
 	const user = JSON.parse(sessionStorage.getItem("user"));
