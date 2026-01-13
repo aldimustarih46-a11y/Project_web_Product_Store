@@ -3,11 +3,13 @@ const api = axios.create({
 	baseURL: "https://695a75ed950475ada466cf19.mockapi.io/api/v1",
 });
 
+// Mengambil data user dari API
 const fetchUser = async () => {
 	const res = await api.get('/user');
 	return res.data;
 }
 
+// Memvalidasi login
 const vailedLogin = (users, email, password) => {
 	const user = users.find(
 		(user) => user.email === email && user.password === password
@@ -17,6 +19,7 @@ const vailedLogin = (users, email, password) => {
 	return user;
 }
 
+// Membuat token palsu
 const createFakeToken = (user) => {
 	return btoa(
 		JSON.stringify({

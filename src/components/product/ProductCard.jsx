@@ -1,11 +1,29 @@
-import { ShoppingCart, MessageCircle } from 'lucide-react';
+import { ShoppingCart, MessageCircle } from "lucide-react";
+import { getAuthUser } from "@/hooks/useAuth";
+import { useNavigate } from "react-router";
 
 function ProductCard({ product, onAddToCart, onSelectProduct }) {
+  const navigate = useNavigate();
+
   const handleAddToCart = (product) => {
-    const phoneNumber = "6282231837178"; 
-    const message = `Halo, saya ingin memesan produk berikut:%0A
-Nama: ${product.title}%0A
-Harga: ${product.price}`;
+    const user = getAuthUser();
+
+    // ❌ belum login
+    if (!user) {
+      alert("Silakan login terlebih dahulu");
+      navigate("/login");
+      return;
+    }
+
+    // ✅ sudah login
+    const phoneNumber = "6282231837178";
+
+    const message = encodeURIComponent(
+      `Halo, saya ingin memesan produk berikut:
+Nama: ${product.title}
+Harga: ${product.price}
+Pemesan: ${user.email}`
+    );
 
     const waUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(waUrl, "_blank");
@@ -21,7 +39,7 @@ Harga: ${product.price}`;
           className="h-full w-full object-contain cursor-pointer transition-transform duration-300 group-hover:scale-110"
           onClick={() => onSelectProduct && onSelectProduct(product)}
         />
-        
+
         {/* Hover Overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-all duration-300" />
       </div>
@@ -36,10 +54,9 @@ Harga: ${product.price}`;
         {/* Price */}
         <div className="mb-4 mt-auto">
           <p className="text-2xl font-bold text-green-600">
-            {typeof product.price === 'number' 
+            {typeof product.price === "number"
               ? `Rp ${product.price.toLocaleString("id-ID")}`
-              : product.price
-            }
+              : product.price}
           </p>
         </div>
 
