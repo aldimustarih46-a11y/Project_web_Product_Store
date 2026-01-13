@@ -33,13 +33,6 @@ Harga: ${product.price}`;
           {product.title}
         </h4>
 
-        {/* Detail (if exists) */}
-        {product.detail && (
-          <p className="text-xs text-gray-500 mb-3 line-clamp-2">
-            {product.detail}
-          </p>
-        )}
-
         {/* Price */}
         <div className="mb-4 mt-auto">
           <p className="text-2xl font-bold text-green-600">

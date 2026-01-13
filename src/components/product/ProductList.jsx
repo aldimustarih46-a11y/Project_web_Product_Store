@@ -21,17 +21,47 @@ function ProductList({ products, onAddToCart, onSelectProduct }) {
               onSelectProduct={onSelectProduct}
             />
           </DialogTrigger>
-          <DialogContent>
+          <DialogContent className="max-w-2xl mx-auto">
             <DialogHeader>
-              <DialogTitle>{product.title}</DialogTitle>
-              <DialogDescription>
-                {product.detail}
+              <DialogTitle className="text-2xl font-bold">
+                {product.title}
+              </DialogTitle>
+              <DialogDescription className="text-base pt-2">
+                Detail lengkap produk
               </DialogDescription>
             </DialogHeader>
-            <div className="flex items-center space-x-4">
-              <img src={product.image} alt={product.title} className="w-20 h-20 object-cover mt-4" />
-              <p>{product.price}</p>
+
+            <div className="mt-4 space-y-6">
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 flex items-center justify-center">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="max-h-64 w-full object-contain"
+                />
               </div>
+            </div>
+
+            <div className="space-y-4">
+              <div>
+                <h4 className="text-sm font-semibold text-gray-500 mb-1">
+                  Deskripsi Produk
+                </h4>
+                <p className="text-gray-700 leading-relaxed">
+                  {product.detail}
+                </p>
+              </div>
+            </div>
+
+            <div className="border-t pt-4">
+              <h4 className="text-sm font-semibold text-gray-500 mb-2">
+                Harga
+              </h4>
+              <p className="text-3xl font-bold text-green-600">
+                {typeof product.price === "number"
+                  ? `Rp ${product.price.toLocaleString("id-ID")}`
+                  : product.price}
+              </p>
+            </div>
           </DialogContent>
         </Dialog>
       ))}
