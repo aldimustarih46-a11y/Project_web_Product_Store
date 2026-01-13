@@ -10,7 +10,6 @@ import { useEffect, useState } from "react";
 import { fetchProduct } from "./hooks/useProducts";
 
 function App() {
-  // const { products } = useProducts();
 
   // List Produk
   const [products, setProducts] = useState([]);
