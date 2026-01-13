@@ -9,7 +9,6 @@ import ProtectedRoute from "./pages/auth/ProtectedRoute";
 import Products from "./pages/Products";
 import User from "./pages/User";
 import About from "./pages/About";
-import ProductDetail from "./components/product/ProductDetail";
 import PageError from "./pages/PageError";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -19,7 +18,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
         <Route path="/about" element={<About />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
         <Route
         path="/admin"
         element={

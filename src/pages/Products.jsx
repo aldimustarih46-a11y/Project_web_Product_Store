@@ -173,6 +173,8 @@ function Products() {
           <h1 className="text-3xl font-bold mb-4 capitalize">{activeMenu}</h1>
           <p className="text-gray-600">
             <div className="mt-4 w-full flex justify-end">
+              
+              {/* Modal untuk menampilkan detail product */}
               <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>
                   <Button variant="ghost">Tambah Data</Button>
