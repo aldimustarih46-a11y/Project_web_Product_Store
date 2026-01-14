@@ -1,1 +1,2 @@
-jadi kita pembagian tugas kontribusi masiing masing di lakukan secara bersamaan dikarenakan kami juga sama sama tidak terlalu paham jadi kami nyari barengan dan kmaren sempat terjadi troble pada salah satu device kami
+jadi kita pembagian tugas kontribusi masiing masing di lakukan secara bersamaan dikarenakan kami juga sama sama tidak terlalu paham jadi kami nyari barengan dan kmaren sempat terjadi troble pada salah satu device kami namun sempat memakai device sodara satunya 
+
