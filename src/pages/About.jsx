@@ -6,9 +6,15 @@ export default function About() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-slate-900 to-slate-700 text-white py-20 px-6">
+<<<<<<< HEAD
         <button>
           <link rel="stylesheet" href="" />
         </button>
+=======
+        <Button variant="outline">
+          <Link to="/" className="text-black">Kembali</Link>
+        </Button>
+>>>>>>> 3be0660 (.)
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl font-bold mb-6">Tentang Kami</h1>
           <p className="text-xl text-gray-200 max-w-3xl">
